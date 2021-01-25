@@ -31,6 +31,7 @@
 		84BC527025BEA21100901F77 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC526F25BEA21100901F77 /* UIImageView+URL.swift */; };
 		84BC527225BEA22500901F77 /* UIView+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC527125BEA22500901F77 /* UIView+Identifier.swift */; };
 		84BC527425BEA23F00901F77 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC527325BEA23F00901F77 /* Date+String.swift */; };
+		84BC527625BEA53000901F77 /* MRCConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC527525BEA53000901F77 /* MRCConstant.swift */; };
 		DFBDE2768F1D79F8B811AEBA /* Pods_SpaceX_API_SpaceX_APIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33DE7B89391FDBC0CFBB726 /* Pods_SpaceX_API_SpaceX_APIUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		84BC526F25BEA21100901F77 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		84BC527125BEA22500901F77 /* UIView+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Identifier.swift"; sourceTree = "<group>"; };
 		84BC527325BEA23F00901F77 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		84BC527525BEA53000901F77 /* MRCConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRCConstant.swift; sourceTree = "<group>"; };
 		BB7DEF2B7AB2CAC461DBA31C /* Pods-SpaceX_API.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX_API.debug.xcconfig"; path = "Target Support Files/Pods-SpaceX_API/Pods-SpaceX_API.debug.xcconfig"; sourceTree = "<group>"; };
 		C33DE7B89391FDBC0CFBB726 /* Pods_SpaceX_API_SpaceX_APIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceX_API_SpaceX_APIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C988AFAA82C235DF6B04A9 /* Pods-SpaceX_APITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX_APITests.release.xcconfig"; path = "Target Support Files/Pods-SpaceX_APITests/Pods-SpaceX_APITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		84BC525725BE9C9900901F77 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				84BC527525BEA53000901F77 /* MRCConstant.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				84BC525E25BE9D6C00901F77 /* LaunchDetailCoordinator.swift in Sources */,
 				84BC527225BEA22500901F77 /* UIView+Identifier.swift in Sources */,
 				84BC526625BEA13800901F77 /* LaunchDetailViewModel.swift in Sources */,
+				84BC527625BEA53000901F77 /* MRCConstant.swift in Sources */,
 				84BC526E25BEA1E600901F77 /* UIViewController+Instantiate.swift in Sources */,
 				84B5FC8A25BE8C7200BECF13 /* AppDelegate.swift in Sources */,
 				84BC526A25BEA18400901F77 /* RocketModel.swift in Sources */,
