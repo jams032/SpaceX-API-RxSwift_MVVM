@@ -24,7 +24,12 @@ let IS_DEVICE_IPHONE = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.phone)
 let IS_IPHONE_X_XS  = IS_DEVICE_IPHONE && DEVICE_WIDTH == 812
 let IS_IPHONE_XR_X_MAX    = (IS_DEVICE_IPHONE && DEVICE_WIDTH == 896)
 
-let domainURL = ""
+let launchesURLString = "https://api.spacexdata.com/v4/launches"
+// flight number, not working
+
+let rocketURLString = "https://api.spacexdata.com/v4/rockets/" // rocket id , works https://api.spacexdata.com/v4/rockets/5e9d0d95eda69973a809d1ec
+
+
 let detailURL = ""
 
 let ErrorMeassage_K = "ErrorMeassage"

@@ -10,8 +10,6 @@ import RxSwift
 import RxCocoa
 
 class LaunchDetailViewModel {
-    private let launchURLString = "https://api.spacexdata.com/v4/launches/" // flight number
-    private let rocketURLString = "https://api.spacexdata.com/v4/rockets/" // rocket id , works https://api.spacexdata.com/v4/rockets/5e9d0d95eda69973a809d1ec
     private let decoder = JSONDecoder()
 
     var launch: PublishSubject<LaunchModel> = PublishSubject()
@@ -32,7 +30,7 @@ class LaunchDetailViewModel {
         return
         
         // we don't have access to https://api.spacexdata.com/v4/launches/117(flightNumber) , so we sent the list #imageLiteral(resourceName: "Screenshot 2021-01-22 at 12.40.26 PM.png")
-        guard let url = URL(string: "\(launchURLString)\("flightNumber")") else { return }
+        guard let url = URL(string: "\(launchesURLString)\("flightNumber")") else { return }
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             guard let data = data else { return }
             do {

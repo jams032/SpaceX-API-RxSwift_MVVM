@@ -19,7 +19,6 @@ enum LaunchFilter: Int {
 }
 
 class LaunchesViewModel {
-    private let launchesURLString = "https://api.spacexdata.com/v4/launches"
 
     private var originalLaunches: [LaunchModel] = []
     private var currentLaunches: [LaunchModel] = []
@@ -43,14 +42,15 @@ class LaunchesViewModel {
                 
                 // Sort last 3 years data
                 let filtered = launches.filter{ ($0.launchDate.contains("2021") || $0.launchDate.contains("2020") || $0.launchDate.contains("2019")) }
-            //   launches = filtered
-                var ids : [String] = []
-                for launc in launches {
-                    if !ids.contains(launc.rocket!) {
-                        ids.append(launc.rocket!)
-                    }
-                }
-                print(ids.description)
+               launches = filtered
+                
+//                var ids : [String] = []
+//                for launc in launches {
+//                    if !ids.contains(launc.rocket!) {
+//                        ids.append(launc.rocket!)
+//                    }
+//                }
+//                print(ids.description)
                 self.originalLaunches = launches
                 self.currentLaunches = launches
                 self.sort(by: self.launchSortingOrder)
