@@ -8,75 +8,26 @@
 
 
 import Foundation
-/*
-struct Rocket: Decodable {
-    let id: String
 
-    enum CodingKeys: String, CodingKey {
-        case id = "rocket_id"
-    }
-}
-
-struct Links: Decodable {
-    let missionPatch: String?
-
-    enum CodingKeys: String, CodingKey {
-        case missionPatch = "mission_patch"
-    }
-}
-
-struct LaunchModel: Decodable {
-    let flightNumber: Int
-    let missionName: String
-    let launchYear: String
-    let launchDate: String
-    let launchSuccess: Bool?
-    let rocket: Rocket
-    let links: Links
-    let details: String?
-
-    var missionNameFirstCharacter: String {
-        return String(self.missionName.prefix(1))
-    }
-
-    enum CodingKeys: String, CodingKey {
-        case flightNumber = "flight_number"
-        case missionName = "name" // mission_name
-        case launchYear = "launch_year"
-        case launchDate =  "date_local"//"launch_date_local"
-        case launchSuccess = "success" // "launch_success"
-        case rocket
-        case links
-        case details
-    }
-}
-*/
 
 struct LaunchModel: Codable {
-   // let fairings: Fairings?
     let links: Links?
     let staticFireDateUTC: String?
     let staticFireDateUnix: Int?
-  //  let tbd, net: Bool?
-  //  let window: Int?
     let rocket: String?
     let success: Bool?
     let details: String?
-   // let crew, ships, capsules: [JSONAny]?
-   // let payloads: [String]?
     let launchpad: String?
     let autoUpdate: Bool?
-  //  let failures: [Failure]?
     let flightNumber: Int?
     let name: String!
     let dateUTC: String = ""
     let dateUTC1: Date?
     let launchDate: String!
     let dateUnix: Int?
-    let dateLocal: String = "" // Date?
+    let dateLocal: String = ""
     let datePrecision: String?
     let upcoming: Bool?
-   // let cores: [Core]?
     let id: String?
 
     var missionNameFirstCharacter: String {
@@ -84,12 +35,11 @@ struct LaunchModel: Codable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case  links // fairings,
+        case  links
         case staticFireDateUTC
-        case staticFireDateUnix // tbd, net, window, , payloads ships, capsules, crew,
+        case staticFireDateUnix
         case  rocket, success, details,  launchpad
         case autoUpdate
-       // case failures
         case flightNumber = "flight_number"
         case name
         case dateUTC = "date_utc"
@@ -97,7 +47,7 @@ struct LaunchModel: Codable {
         case dateUnix
         case dateLocal
         case datePrecision
-        case upcoming, id // , cores
+        case upcoming, id
         case launchDate = "date_local"
     }
 }
@@ -122,7 +72,6 @@ struct Core: Codable {
 struct Failure: Codable {
     let time: Int?
     let altitude:Int?
-// JSONNull?
     let reason: String?
 }
 
@@ -141,18 +90,9 @@ struct Fairings: Codable {
 // MARK: - Links
 struct Links: Codable {
     let patch: Patch?
-   // let reddit: Reddit?
-   // let flickr: Flickr?
-   // let presskit:String? // JSONNull?
-   // let webcast: String?
-  //  let youtubeID: String?
-   // let article: String?
     let wikipedia: String!
-
     enum CodingKeys: String, CodingKey {
-        case patch //, reddit, flickr, presskit, webcast
-       // case youtubeID
-       // case article,
+        case patch
        case wikipedia
     }
 }

@@ -20,7 +20,7 @@ class LaunchDetailViewModel {
     init(flightNumber: Int, rocketId: String, launch:LaunchModel) {
         //flightNumber: Int, rocketId: String,
         currentLaunch = launch
-        self.retrieveLaunchDetails() // with: launch.flightNumber!
+        self.retrieveLaunchDetails()
         self.retrieveRocketDetails(with: launch.rocket ?? "")
     }
 
@@ -29,8 +29,9 @@ class LaunchDetailViewModel {
        self.launch.onNext(currentLaunch)
         return
         
-        // we don't have access to https://api.spacexdata.com/v4/launches/117(flightNumber) , so we sent the list #imageLiteral(resourceName: "Screenshot 2021-01-22 at 12.40.26 PM.png")
-        guard let url = URL(string: "\(launchesURLString)\("flightNumber")") else { return }
+        // we don't have access to https://api.spacexdata.com/v4/launches/117 // (flightNumber) , so we sent the list
+        let flightNumber = 110
+        guard let url = URL(string: "\(launchesURLString)\(flightNumber)") else { return }
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             guard let data = data else { return }
             do {
@@ -50,15 +51,15 @@ class LaunchDetailViewModel {
             do {
                 
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                                  print(json)
-                               }
+                    print(json)
+                }
                 
                 let rocket = try self.decoder.decode(RocketModel.self, from: data)
                 self.currentRocket = rocket
-
+                
                 self.rocket.onNext(rocket)
             } catch let error {
-               print("Error:", error.localizedDescription)
+                print("Error:", error.localizedDescription)
             }
         }.resume()
     }

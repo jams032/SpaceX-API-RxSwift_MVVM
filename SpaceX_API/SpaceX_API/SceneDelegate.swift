@@ -25,7 +25,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
 
         UINavigationBar.appearance().prefersLargeTitles = true
-
         guard let _ = (scene as? UIWindowScene) else { return }
         
     }

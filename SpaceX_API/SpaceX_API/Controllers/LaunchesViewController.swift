@@ -35,9 +35,9 @@ class LaunchesViewController: UIViewController {
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, LaunchModel>>(
             configureCell: { dataSource, table, indexPath, item in
                 guard let cell = table.dequeueReusableCell(withIdentifier: LaunchesTableViewCell.classIdentifier, for: indexPath) as? LaunchesTableViewCell else { return UITableViewCell() }
-                cell.missionLabel.text = item.name // item.missionName
+                cell.missionLabel.text = item.name
                 cell.dateLabel.text = dateFormatter.date(from: item.launchDate)?.toString()
-                return cell // from: item.launchDate
+                return cell
             },
             titleForHeaderInSection: { dataSource, index in
                 return dataSource.sectionModels[index].model
@@ -51,7 +51,7 @@ class LaunchesViewController: UIViewController {
         tableView.rx.modelSelected(LaunchModel.self)
         .subscribe(onNext: { [weak self] cellViewModel in
             guard let self = self else { return }
-            self.delegate?.navigateToLaunchDetails(missionName: cellViewModel.name, flightNumber: cellViewModel.flightNumber!, rocketId: cellViewModel.rocket!,launch: cellViewModel) // missionName: cellViewModel.missionName, flightNumber: cellViewModel.flightNumber, rocketId:  cellViewModel.rocket.id
+            self.delegate?.navigateToLaunchDetails(missionName: cellViewModel.name, flightNumber: cellViewModel.flightNumber!, rocketId: cellViewModel.rocket!,launch: cellViewModel)
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 self.tableView.deselectRow(at: indexPath, animated: true)
             }

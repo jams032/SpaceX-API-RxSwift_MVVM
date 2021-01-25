@@ -39,7 +39,7 @@ class LaunchDetailViewController: UIViewController {
         setup()
 
         if let launch  = viewModel.currentLaunch  {
-            self.setupUI(from: launch) // launch.missionName.count
+            self.setupUI(from: launch)
         } else {
             self.stackView.isHidden = true
         }
@@ -108,7 +108,7 @@ class LaunchDetailViewController: UIViewController {
 
             if let launchDate = self.dateFormatter.date(from: launch.dateLocal)?.toString(dateStyle: .medium) { // launch.launchDate
                 let launchDatePrefix: String
-                if let launchSuccess = launch.success { // launchSuccess
+                if let launchSuccess = launch.success {
                     if launchSuccess {
                         launchDatePrefix = "Successful launch on"
                     } else {
@@ -128,7 +128,7 @@ class LaunchDetailViewController: UIViewController {
     private func setupUI(from rocket: RocketModel) {
         DispatchQueue.main.async {
             self.stackView.isHidden = false
-            self.costLabel.text = "" // "$\(rocket.costPerLaunch)"
+            self.costLabel.text = ""
             self.countryLabel.text = rocket.country
             self.companyLabel.text = rocket.company
             self.rocketDescriptionTextView.text = rocket.description

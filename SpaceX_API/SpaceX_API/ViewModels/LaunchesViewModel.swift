@@ -63,7 +63,7 @@ class LaunchesViewModel {
 
     private func updateSections(byFirstCharacter: Bool = false, ascending: Bool = false) {
         var sectionModels: [SectionModel<String, LaunchModel>] = []
-    //    let groupedArray = Dictionary(grouping: currentLaunches, by: { byFirstCharacter ? $0.missionNameFirstCharacter : $0.launchYear })
+
         let groupedArray = Dictionary(grouping: currentLaunches, by: { byFirstCharacter ? $0.missionNameFirstCharacter : $0.dateUTC })
 
         var sortedLaunches: [(key: String, value: [LaunchModel])]
@@ -96,18 +96,18 @@ class LaunchesViewModel {
 
     private func sort(latestFirst: Bool) {
         if latestFirst {
-            currentLaunches = currentLaunches.sorted { $0.launchDate > $1.launchDate } // launchDate
+            currentLaunches = currentLaunches.sorted { $0.launchDate > $1.launchDate }
         } else {
-            currentLaunches = currentLaunches.sorted { $0.launchDate < $1.launchDate } // launchDate
+            currentLaunches = currentLaunches.sorted { $0.launchDate < $1.launchDate }
         }
         updateSections(ascending: latestFirst == false)
     }
 
     private func sort(alphabetically: Bool) {
         if alphabetically {
-            currentLaunches = currentLaunches.sorted { $0.name < $1.name } //missionName
+            currentLaunches = currentLaunches.sorted { $0.name < $1.name }
         } else {
-            currentLaunches = currentLaunches.sorted { $0.name > $1.name } //missionName
+            currentLaunches = currentLaunches.sorted { $0.name > $1.name }
         }
         updateSections(byFirstCharacter: true, ascending: alphabetically)
     }
@@ -118,7 +118,7 @@ class LaunchesViewModel {
         if launchFilter == .all {
             currentLaunches = originalLaunches
         } else {
-            currentLaunches = originalLaunches.filter { $0.success == true } // launchSuccess
+            currentLaunches = originalLaunches.filter { $0.success == true }
         }
 
         switch launchSortingOrder {
