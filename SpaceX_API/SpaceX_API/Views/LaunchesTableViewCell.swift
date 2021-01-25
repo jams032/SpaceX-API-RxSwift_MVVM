@@ -9,6 +9,8 @@
 import UIKit
 
 class LaunchesTableViewCell: UITableViewCell {
+    @IBOutlet var missionLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +22,6 @@ class LaunchesTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
 
 }

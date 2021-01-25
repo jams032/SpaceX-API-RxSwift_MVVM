@@ -6,16 +6,17 @@
 //  Copyright © 2021 Jamshed. All rights reserved.
 //
 
+
 import UIKit
 
-class UIImageView_URL: UIImageView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+extension UIImageView {
+    func load(url: URL, completion: ((Bool) -> Void)?) {
+        DispatchQueue.global().async { [weak self] in
+            guard let self = self, let data = try? Data(contentsOf: url), let image = UIImage(data: data) else { return }
+            DispatchQueue.main.async {
+                self.image = image
+                completion?(true)
+            }
+        }
     }
-    */
-
 }

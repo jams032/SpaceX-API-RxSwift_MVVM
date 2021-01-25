@@ -6,11 +6,9 @@ let ProductionMode =  true
 let TempEmail =  ""
 let TempPass =  ""
 
-let LoginStoryboard =  "Main"
-let SplashVC = "SplashViewController"
-let LoginVC = "LoginViewController"
-let DashboardStoryboard = "Dashboard"
-let DashboardVC = "DashboardViewController"
+let MainStoryboard =  "Main"
+let LaunchVC = "LaunchesViewController"
+let LaunchDetailsVC = "LaunchDetailViewController"
 
 let DEVICE_WIDTH :Int =  Int(UIScreen.main.bounds.size.width)
 let DEVICE_HEIGHT:Int =  Int(UIScreen.main.bounds.size.height)
@@ -24,8 +22,7 @@ let SF: Float = Float(SCREEN_MIN_LENGTH)/Float(320.0)
 let IS_DEVICE_IPHONE = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.phone)
 
 let IS_IPHONE_X_XS  = IS_DEVICE_IPHONE && DEVICE_WIDTH == 812
-let IS_IPHONE_XR  = (IS_DEVICE_IPHONE && DEVICE_WIDTH == 896)
-let IS_IPHONE_X_MAX  = (IS_DEVICE_IPHONE && DEVICE_WIDTH == 896)
+let IS_IPHONE_XR_X_MAX    = (IS_DEVICE_IPHONE && DEVICE_WIDTH == 896)
 
 let domainURL = ""
 let detailURL = ""

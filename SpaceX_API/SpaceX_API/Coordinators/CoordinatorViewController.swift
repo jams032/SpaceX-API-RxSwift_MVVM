@@ -9,5 +9,9 @@
 import UIKit
 
 class Coordinator {
+    weak var navigationController: UINavigationController?
 
+    init (navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+    }
 }
