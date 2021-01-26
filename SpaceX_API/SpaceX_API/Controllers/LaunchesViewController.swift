@@ -11,7 +11,7 @@ import RxCocoa
 import RxDataSources
 
 protocol LaunchesNavigationDelegate {
-    func navigateToLaunchDetails(missionName: String, flightNumber: Int, rocketId: String, launch:LaunchModel)
+    func navigateToLaunchDetails(missionName: String, id:String, flightNumber: Int, rocketId: String, launch:LaunchModel)
 }
 
 class LaunchesViewController: UIViewController {
@@ -51,7 +51,7 @@ class LaunchesViewController: UIViewController {
         tableView.rx.modelSelected(LaunchModel.self)
         .subscribe(onNext: { [weak self] cellViewModel in
             guard let self = self else { return }
-            self.delegate?.navigateToLaunchDetails(missionName: cellViewModel.name, flightNumber: cellViewModel.flightNumber!, rocketId: cellViewModel.rocket!,launch: cellViewModel)
+            self.delegate?.navigateToLaunchDetails(missionName: cellViewModel.name,id: cellViewModel.id!, flightNumber: cellViewModel.flightNumber!, rocketId: cellViewModel.rocket!,launch: cellViewModel)
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 self.tableView.deselectRow(at: indexPath, animated: true)
             }

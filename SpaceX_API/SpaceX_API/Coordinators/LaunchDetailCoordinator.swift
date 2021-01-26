@@ -9,11 +9,12 @@
 import SafariServices
 
 class LaunchDetailCoordinator: Coordinator {
-    func start(with missionName: String, flightNumber: Int, rocketId: String,launch:LaunchModel) {
+    func start(with missionName: String, id :String, flightNumber: Int, rocketId: String,launch:LaunchModel) {
         guard let launchDetailViewController = LaunchDetailViewController.instatiate() as? LaunchDetailViewController else { return }
         launchDetailViewController.title = missionName
-        launchDetailViewController.viewModel = LaunchDetailViewModel(flightNumber: flightNumber, rocketId: rocketId,launch: launch)
+        launchDetailViewController.viewModel = LaunchDetailViewModel(flightNumber: flightNumber, id:id, rocketId: rocketId,launch: launch)
         launchDetailViewController.delegate = self
+       // sleep(5)
         navigationController?.pushViewController(launchDetailViewController, animated: true)
     }
 }

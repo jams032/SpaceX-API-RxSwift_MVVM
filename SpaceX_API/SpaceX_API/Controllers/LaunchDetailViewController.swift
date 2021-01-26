@@ -38,35 +38,35 @@ class LaunchDetailViewController: UIViewController {
 
         setup()
 
-        if let launch  = viewModel.currentLaunch  {
-            self.setupUI(from: launch)
-        } else {
-            self.stackView.isHidden = true
-        }
-        
-        if viewModel.currentRocket != nil {
-            self.setupUI(from: viewModel.currentRocket)
-            self.wikipediaURLString = viewModel.currentRocket.wikipedia
-        } else {
-            self.stackView.isHidden = true
-        }
+//        if let launch  = viewModel.currentLaunch  {
+//            self.setupUI(from: launch)
+//        } else {
+//            self.stackView.isHidden = true
+//        }
+//
+//        if viewModel.currentRocket != nil {
+//            self.setupUI(from: viewModel.currentRocket)
+//            self.wikipediaURLString = viewModel.currentRocket.wikipedia
+//        } else {
+//            self.stackView.isHidden = true
+//        }
         
         
         // As the Launch detaul API is not working properly , i just kept the structre
-//        viewModel.launch.subscribe(onNext: { [weak self] launch in
-//            guard let self = self, launch.name.count > 0 else { return }
-//            self.setupUI(from: launch)
-//        }, onError: { _ in
-//            self.stackView.isHidden = true
-//        }).disposed(by: disposeBag)
+        viewModel.launch.subscribe(onNext: { [weak self] launch in
+            guard let self = self, launch.name.count > 0 else { return }
+            self.setupUI(from: launch)
+        }, onError: { _ in
+            self.stackView.isHidden = true
+        }).disposed(by: disposeBag)
 
-//        viewModel.rocket.subscribe(onNext: { [weak self] rocket in
-//            guard let self = self, rocket.rocketName.count > 0 else { return }
-//            self.setupUI(from: rocket)
-//            self.wikipediaURLString = rocket.wikipedia
-//        }, onError: { _ in
-//            self.stackView.isHidden = true
-//        }).disposed(by: disposeBag)
+        viewModel.rocket.subscribe(onNext: { [weak self] rocket in
+            guard let self = self, rocket.rocketName.count > 0 else { return }
+            self.setupUI(from: rocket)
+            self.wikipediaURLString = rocket.wikipedia
+        }, onError: { _ in
+            self.stackView.isHidden = true
+        }).disposed(by: disposeBag)
         
 
     }

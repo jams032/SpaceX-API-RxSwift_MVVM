@@ -19,7 +19,7 @@ class LaunchesCoordinator: Coordinator {
 }
 
 extension LaunchesCoordinator: LaunchesNavigationDelegate {
-    func navigateToLaunchDetails(missionName: String, flightNumber: Int, rocketId: String,launch:LaunchModel) {
-        launchDetailCoordinator.start(with: missionName, flightNumber: flightNumber, rocketId: rocketId,launch: launch)
+    func navigateToLaunchDetails(missionName: String,id: String, flightNumber: Int, rocketId: String,launch:LaunchModel) {
+        launchDetailCoordinator.start(with: missionName,id: id, flightNumber: flightNumber, rocketId: rocketId,launch: launch)
     }
 }
