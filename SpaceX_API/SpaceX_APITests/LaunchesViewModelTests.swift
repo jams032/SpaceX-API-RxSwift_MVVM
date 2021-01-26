@@ -1,6 +1,6 @@
 //
 //  LaunchViewModelTests.swift
-//  LiftoffTests
+//  SpaceXTests
 //
 //  Created by Admin on 24/1/21.
 //  Copyright © 2021 Syd Srirak. All rights reserved.

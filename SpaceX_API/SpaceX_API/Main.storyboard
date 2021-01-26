@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bcs-2q-U6H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bcs-2q-U6H">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         <!--Liftoff-->
         <scene sceneID="iRm-LJ-FCj">
             <objects>
-                <viewController storyboardIdentifier="LaunchesViewController" id="bcs-2q-U6H" customClass="LaunchesViewController" customModule="Liftoff" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LaunchesViewController" id="bcs-2q-U6H" customClass="LaunchesViewController" customModule="SpaceX_API" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QlJ-xU-oKM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LaunchesTableViewCell" id="ZzB-kH-te0" customClass="LaunchesTableViewCell" customModule="Liftoff" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LaunchesTableViewCell" id="ZzB-kH-te0" customClass="LaunchesTableViewCell" customModule="SpaceX_API" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="168" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZzB-kH-te0" id="oBd-fK-8iD">
@@ -109,7 +109,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fB7-BA-qRy"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Liftoff" id="F8h-B5-vrC"/>
+                    <navigationItem key="navigationItem" title="Liftoff" id="F8h-B5-vrC" userLabel="SpaceX"/>
                     <connections>
                         <outlet property="launchSuccessSegmentedControl" destination="WZQ-Dm-aDL" id="Fey-Vu-675"/>
                         <outlet property="sortSegmentedControl" destination="tVc-PX-3ab" id="f8n-BU-Qq1"/>
@@ -123,7 +123,7 @@
         <!--Launch Detail View Controller-->
         <scene sceneID="a1B-W8-cWW">
             <objects>
-                <viewController storyboardIdentifier="LaunchDetailViewController" id="Mrd-qF-hQL" customClass="LaunchDetailViewController" customModule="Liftoff" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LaunchDetailViewController" id="Mrd-qF-hQL" customClass="LaunchDetailViewController" customModule="SpaceX_API" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WHm-AL-0gy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

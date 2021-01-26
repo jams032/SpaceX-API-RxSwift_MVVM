@@ -92,7 +92,7 @@ struct Links: Codable {
     let patch: Patch?
     let wikipedia: String!
     enum CodingKeys: String, CodingKey {
-        case patch
+       case patch = "patch"
        case wikipedia
     }
 }
