@@ -27,8 +27,8 @@ class LaunchDetailViewModel {
 
     func retrieveLaunchDetails(id:String) { // with flightNumber or id: Int
         
-      self.launch.onNext(currentLaunch)
-      return
+   //   self.launch.onNext(currentLaunch)
+ //     return
         
         // we don't have access to https://api.spacexdata.com/v4/launches/117 // (flightNumber) , so we sent the list
         let flightNumber = 110
@@ -43,7 +43,7 @@ class LaunchDetailViewModel {
                            }
                 
                 let launch = try self.decoder.decode(LaunchModel.self, from: data)
-              //  self.currentLaunch = launch
+                self.currentLaunch = launch
 
                 self.launch.onNext(launch)
             } catch let error {
