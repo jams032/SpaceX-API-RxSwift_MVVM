@@ -49,14 +49,14 @@ class LaunchesViewModelTests: XCTestCase {
     func testLaunchModel() {
 
 
-        let lightModel1 = LaunchModel(links: (Links(patch: (Patch(small: "url", large: "url")), wikipedia: "wiki")), staticFireDateUTC: "2020", staticFireDateUnix: 20202, rocket: "scddcd334", success: true, details: "Hello details", launchpad: "launch pad", autoUpdate: true, flightNumber: 110, name: "Falcon9", dateUTC1: Date.init(), launchDate: "2020", dateUnix: 22424, datePrecision: "2202", upcoming: true, id: "123")
+        let launchModel = LaunchModel(links: (Links(patch: (Patch(small: "url", large: "url")), wikipedia: "wiki")), staticFireDateUTC: "2020", staticFireDateUnix: 20202, rocket: "scddcd334", success: true, details: "Hello details", launchpad: "launch pad", autoUpdate: true, flightNumber: 110, name: "Falcon9", dateUTC1: Date.init(), launchDate: "2020", dateUnix: 22424, datePrecision: "2202", upcoming: true, id: "123")
         
 
-        XCTAssert((lightModel1.links?.patch?.small!.count)! > 0 , "No Image links comes")
-        XCTAssert((lightModel1.id!.count) > 0 , "No ID comes")
-        XCTAssert((lightModel1.links?.wikipedia!.count)! > 0 , "No wikipedia links comes")
-        XCTAssert(lightModel1.name.count > 0 , "No name links comes")
-        XCTAssert(lightModel1.launchDate.count > 0 , "No launchDate links comes")
+        XCTAssert((launchModel.links?.patch?.small!.count)! > 0 , "No Image links comes")
+        XCTAssert((launchModel.id!.count) > 0 , "No ID comes")
+        XCTAssert((launchModel.links?.wikipedia!.count)! > 0 , "No wikipedia links comes")
+        XCTAssert(launchModel.name.count > 0 , "No name links comes")
+        XCTAssert(launchModel.launchDate.count > 0 , "No launchDate links comes")
 
         
         
@@ -83,38 +83,24 @@ class LaunchesViewModelTests: XCTestCase {
         .bind(to: tableView.rx.items(dataSource: dataSource))
         .disposed(by: disposeBag)
         
-        
-        if let filePath = Bundle.main.path(forResource: "Launches", ofType: "json"), let data = NSData(contentsOfFile: filePath) {
-            do {
-                
-                let json = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.allowFragments)
-                
-                let decoder = JSONDecoder()
-                var launches = try decoder.decode([LaunchModel].self, from: data as Data)
-                print(launches.first?.name)
-                
-            }
-            catch {
-                //Handle error
-                print("Error:", error.localizedDescription)
-            }
-        }
-        
+    
         guard let data = getJSONData(fileName: "Launches")else { return XCTFail() }
 
         let decoder = JSONDecoder()
-            
-        let launches: [LaunchModel] = try! JSONDecoder().decode([LaunchModel].self, from:  data as Data)
-        print(launches.first?.name)
-
+        let launches: [LaunchModel] = try! decoder.decode([LaunchModel].self, from:  data as Data)
 
         XCTAssertNotNil(launches.count == 0, "No Launches Found!")
         XCTAssertNotNil(launches.first?.name.count == 0, "name Not Found!")
         XCTAssertTrue(launches.first?.links?.patch?.small?.count == 0, "patch small name Not Found!")
+        XCTAssertTrue(launches.first?.id?.count == 0, "id Not Found!")
 
-      //  let fetchedElement = viewModel.getElement(at: IndexPath(row: 0, section: 0))
-      //  XCTAssertEqual(element, fetchedElement)
+        XCTAssertNotNil(launches[1].name.count == 0, "name Not Found!")
+        XCTAssertTrue(launches[1].links?.patch?.small?.count == 0, "patch small name Not Found!")
+        XCTAssertTrue(launches[1].id?.count == 0, "id Not Found!")
         
+        XCTAssertNotNil(launches[2].name.count == 0, "name Not Found!")
+        XCTAssertTrue(launches[2].links?.patch?.small?.count == 0, "patch small name Not Found!")
+        XCTAssertTrue(launches[2].id?.count == 0, "id Not Found!")
     }
     
     func testabc() {
@@ -124,12 +110,6 @@ class LaunchesViewModelTests: XCTestCase {
     func getJSONData(fileName:String) -> Data? {
         if let filePath = Bundle.main.path(forResource: fileName, ofType: "json"), let data = NSData(contentsOfFile: filePath) {
             do {
-                
-//                let json = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.allowFragments)
-//
-//                let decoder = JSONDecoder()
-//                var launches = try decoder.decode([LaunchModel].self, from: data as Data)
-//                print(launches.first?.name)
                 return data as Data
             }
             catch {
