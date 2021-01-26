@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Liftoff-->
+        <!--SpaceX-->
         <scene sceneID="iRm-LJ-FCj">
             <objects>
-                <viewController storyboardIdentifier="LaunchesViewController" id="bcs-2q-U6H" customClass="LaunchesViewController" customModule="SpaceX_API" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LaunchesViewController" id="bcs-2q-U6H" userLabel="SpaceX" customClass="LaunchesViewController" customModule="SpaceX_API" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QlJ-xU-oKM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,8 +31,6 @@
                                                     <segments>
                                                         <segment title="Latest"/>
                                                         <segment title="Earliest"/>
-                                                        <segment title="A-Z"/>
-                                                        <segment title="Z-A"/>
                                                     </segments>
                                                     <connections>
                                                         <action selector="sortSegmentedControl:" destination="bcs-2q-U6H" eventType="valueChanged" id="4Kp-Pa-XF3"/>
@@ -109,7 +107,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fB7-BA-qRy"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Liftoff" id="F8h-B5-vrC" userLabel="SpaceX"/>
+                    <navigationItem key="navigationItem" title="SpaceX-Demo" id="F8h-B5-vrC" userLabel="SpaceX"/>
                     <connections>
                         <outlet property="launchSuccessSegmentedControl" destination="WZQ-Dm-aDL" id="Fey-Vu-675"/>
                         <outlet property="sortSegmentedControl" destination="tVc-PX-3ab" id="f8n-BU-Qq1"/>

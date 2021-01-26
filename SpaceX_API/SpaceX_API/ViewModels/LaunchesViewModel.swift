@@ -11,7 +11,7 @@ import RxCocoa
 import RxDataSources
 
 enum LaunchSortingOrder: Int {
-    case latest, earliest, alphabetically, alphabeticallyReversed
+    case latest, earliest
 }
 
 enum LaunchFilter: Int {
@@ -89,8 +89,6 @@ class LaunchesViewModel {
         switch launchSortingOrder {
         case .latest: sort(latestFirst: true)
         case .earliest: sort(latestFirst: false)
-        case .alphabetically: sort(alphabetically: true)
-        case .alphabeticallyReversed: sort(alphabetically: false)
         }
     }
 
@@ -101,15 +99,6 @@ class LaunchesViewModel {
             currentLaunches = currentLaunches.sorted { $0.launchDate < $1.launchDate }
         }
         updateSections(ascending: latestFirst == false)
-    }
-
-    private func sort(alphabetically: Bool) {
-        if alphabetically {
-            currentLaunches = currentLaunches.sorted { $0.name < $1.name }
-        } else {
-            currentLaunches = currentLaunches.sorted { $0.name > $1.name }
-        }
-        updateSections(byFirstCharacter: true, ascending: alphabetically)
     }
 
     // MARK: - Filter Launches
@@ -128,12 +117,6 @@ class LaunchesViewModel {
         case .earliest:
             sort(latestFirst: false)
             updateSections(ascending: true)
-        case .alphabetically:
-            sort(alphabetically: true)
-            updateSections(byFirstCharacter: true, ascending: true)
-        case .alphabeticallyReversed:
-            sort(alphabetically: false)
-            updateSections(byFirstCharacter: true, ascending: false)
         }
     }
 }
