@@ -40,7 +40,7 @@
                                                     <rect key="frame" x="0.0" y="58" width="374" height="43"/>
                                                     <segments>
                                                         <segment title="All"/>
-                                                        <segment title="Successful 🚀"/>
+                                                        <segment title="Successful"/>
                                                     </segments>
                                                     <connections>
                                                         <action selector="successSegmentedControlSelected:" destination="bcs-2q-U6H" eventType="valueChanged" id="GTf-ed-RoU"/>

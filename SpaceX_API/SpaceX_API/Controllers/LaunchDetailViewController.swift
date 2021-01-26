@@ -136,7 +136,7 @@ class LaunchDetailViewController: UIViewController {
             self.countryLabel.text = rocket.country
             self.companyLabel.text = rocket.company
             self.rocketDescriptionTextView.text = rocket.description
-            self.moreInformationButton.setTitle("\(rocket.rocketName) 🚀", for: .normal)
+            self.moreInformationButton.setTitle("\(rocket.rocketName)", for: .normal)
             self.moreInformationButton.isHidden = false
         }
     }
