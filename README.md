@@ -11,7 +11,7 @@ So far i have done :
 
 I will definitely do some refractoring like:
 - create API manager
-- improve some point DetailsViewModel as some Launch has no data, so loading data/sending param is not good. 
+- improve some point DetailsViewModel as some Launch has no data, so loading data/sending param is not in good right format. 
 - will perforom related Unit test too. 
 
 I did not work too much on RXSwift, normally i'm used with native(swift) developement. I will cover all these within a month. Already i've started. 
